@@ -1,21 +1,21 @@
-var recipes = {};
+const driver = {};
 
-function updateObjectWithKeyAndValue(object, key, value) {
-  return Object.assign({},object , { [key]: value });
+const updateDriverWithKeyAndValue = (driver, k, v) => {
+  return { ...driver, ...{[k]: v}};
 }
 
-function destructivelyUpdateObjectWithKeyAndValue(object, key, value) {
-  object[key] = value;
-  return object;
+const destructivelyUpdateDriverWithKeyAndValue = (driver, k, v) => {
+  driver[k] = v;
+  return driver;
 }
 
-function deleteFromObjectByKey(object, key) {
-  var newObj = Object.assign({},object)
-  delete newObj[key];
-  return newObj;
+const deleteFromDriverByKey = (driver, k) => {
+  const newDriver = {... driver};
+  delete newDriver[k];
+  return newDriver;
 }
 
-function destructivelyDeleteFromObjectByKey(object, key) {
-  delete object[key];
-  return object;
-}
+const destructivelyDeleteFromDriverByKey = (driver, k) => {
+  delete driver[k];
+  return driver;
+} 
